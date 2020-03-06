@@ -11,16 +11,18 @@ import node.Node;
 public class MyQueue {
     // a field to refer rear end of queue
     private Node rear;
-    //
+    // a field to refer front end of queue
     private Node front;
     private int size;// total number of elements in the queue
 
+    // constructor
     public MyQueue() {
         front = null;
         rear = null;
         size = 0;
     }
 
+    // a method to check whether queue is empty
     public boolean isEmpty() {
         boolean response = false;
         if (size == 0) {
@@ -29,6 +31,8 @@ public class MyQueue {
         return response;
     }
 
+
+    // a method to add a new element in queue
     public void enqueue(int element) {
         Node node = new Node(element);
         if (front == null) {
@@ -42,6 +46,7 @@ public class MyQueue {
         }
     }
 
+    // a method to remove element of queue from front
     public Node dequeue() {
         Node response = null;
         if (front != null) {
@@ -59,6 +64,7 @@ public class MyQueue {
         return response;
     }
 
+    // a method to get front element without removing it
     public Node peek() {
         Node response = null;
         if (!isEmpty()) {
@@ -67,6 +73,7 @@ public class MyQueue {
         return response;
     }
 
+    // a method to get size of queue
     public int getSize() {
         return size;
     }
