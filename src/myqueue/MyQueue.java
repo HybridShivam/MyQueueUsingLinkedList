@@ -97,6 +97,20 @@ public class MyQueue {
         return response;
     }
 
+
+    public void display(){
+        System.out.print("Display : ");
+        Node temp=front;
+        while(temp!=null){
+            System.out.print(temp.getData());
+            if(temp.getNext()!=null){
+                System.out.print("<---");
+            }
+            temp=temp.getNext();
+        }
+        System.out.println();
+    }
+
     // a method to get size of queue
     public int getSize() {
         return size;
