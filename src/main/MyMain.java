@@ -18,6 +18,13 @@ public class MyMain {
         queue.enqueue(400);
         queue.enqueue(200);
         System.out.println(queue.dequeue().getData() + " element deleted from queue");
+        System.out.println(queue.rear().getData() + " is rear");
+        System.out.println(queue.dequeue().getData() + " element deleted from queue");
+        System.out.println(queue.rear().getData() + " is rear");
+        System.out.println(queue.dequeue().getData() + " element deleted from queue");
+        System.out.println(queue.rear().getData() + " is rear");
+        System.out.println(queue.dequeue().getData() + " element deleted from queue");
+        //System.out.println(queue.rear().getData() + " is rear");
         System.out.println("the size queue is = " + queue.getSize());
 
     }

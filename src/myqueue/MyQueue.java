@@ -35,7 +35,7 @@ public class MyQueue {
     // a method to add a new element in queue
     public void enqueue(int element) {
         Node node = new Node(element);
-        if (front == null) {
+        if (isEmpty()) {
             rear = node;
             front = node;
             size++;
@@ -47,21 +47,45 @@ public class MyQueue {
     }
 
     // a method to remove element of queue from front
-    public Node dequeue() {
-        Node response = null;
-        if (front != null) {
-            if (front.getNext() != null) {
-                response = new Node(front.getData());
+//    public Node dequeue() {
+//        Node response = null;
+//        if (!isEmpty()) {
+//            if (front.getNext() != null) {
+//                response = new Node(front.getData());
+//                front = front.getNext();
+//                size--;
+//            } else {
+//                response = new Node(front.getData());
+//                front = null;
+//                rear = null;
+//                size--;
+//            }
+//        }
+//        return response;
+//    }
+
+    public Node dequeue(){
+        Node res = null;
+        if(!isEmpty()) {
+            if(front.getNext()!=null) {
+                res = front;
                 front = front.getNext();
+                res.setNext(null);
                 size--;
-            } else {
-                response = new Node(front.getData());
-                front = null;
-                rear = null;
+            }
+            else {
+                res=front;
+                //res.getNext(null);//redundant
+                front=null;
+                rear=null;
                 size--;
             }
         }
-        return response;
+        else {
+            System.out.println("Queue UnderFlow");
+        }
+        return res;
+
     }
 
     // a method to get front element without removing it
@@ -76,5 +100,9 @@ public class MyQueue {
     // a method to get size of queue
     public int getSize() {
         return size;
+    }
+
+    public Node rear(){
+        return rear;
     }
 }
